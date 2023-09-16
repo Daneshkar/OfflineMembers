@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers
             ValidationService = validationService;
         }
 
-        [HttpGet(Name = "Service1")]
+        [HttpGet(Name = "Service233")]
         public string Get()
         {
             ServiceA.Calc(10);
@@ -62,10 +62,6 @@ namespace WebApplication1.Controllers
         {
             CalcValue += val;
         }
-        public bool IsValid(Model model)
-        {
-            return true;
-        }
     }
     public class HomeServiceC
     {
@@ -73,10 +69,6 @@ namespace WebApplication1.Controllers
         public void Calc(int val)
         {
             CalcValue += val;
-        }
-        public bool IsValid(Model model)
-        {
-            return true;
         }
     }
 
