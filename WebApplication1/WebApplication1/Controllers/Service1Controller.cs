@@ -7,10 +7,12 @@ namespace WebApplication1.Controllers
     [Route("[controller]")]
     public class Service1Controller : ControllerBase
     {
+        #region
         public HomeServiceA ServiceA { get; set; }
         public HomeServiceB ServiceB { get; set; }
         public HomeServiceC ServiceC { get; set; }
         public ValidationService ValidationService { get; }
+        #endregion
 
         public Service1Controller(
             HomeServiceA serviceA
@@ -25,7 +27,7 @@ namespace WebApplication1.Controllers
             ValidationService = validationService;
         }
 
-        [HttpGet(Name = "Service233")]
+        [HttpGet, Route("s11")]
         public string Get()
         {
             ServiceA.Calc(10);
@@ -33,6 +35,7 @@ namespace WebApplication1.Controllers
             ServiceC.Calc(10);
 
             ValidationService.IsValid();
+
             StringBuilder sb1 = new();
             sb1.Append("Scoped / ServiceA.CalcValue = ");
             sb1.Append(ServiceA.CalcValue);
@@ -43,6 +46,12 @@ namespace WebApplication1.Controllers
             sb1.Append("Transient / ServiceC.CalcValue = ");
             sb1.Append(ServiceC.CalcValue);
             return sb1.ToString();
+        }
+
+        [HttpGet, Route("s22")]
+        public string Get2()
+        {
+            return "sssssssss";
         }
     }
 
@@ -93,10 +102,6 @@ namespace WebApplication1.Controllers
             ServiceA.Calc(10);
             ServiceB.Calc(10);
             ServiceC.Calc(10);
-
-            int x = ServiceA.CalcValue;
-            int x2 = ServiceB.CalcValue;
-            int x3 = ServiceC.CalcValue;
         }
     }
 }
