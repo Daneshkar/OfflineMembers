@@ -1,0 +1,31 @@
+﻿@model MiddlewareTest.Models.User
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="InvreaseMoney">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control">
+                    <label asp-for="CurrentMoney" class="control-label"></label>
+                    <input asp-for="CurrentMoney" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="IncreaseMoney" class="control-label"></label>
+                    <input asp-for="IncreaseMoney" class="form-control" />
+                </div>
+                <div class="form-group">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
